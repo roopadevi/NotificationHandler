@@ -13,10 +13,10 @@ let kLoginSuccessfulNotification = "LoginSuccessfulNotification"
 let kReasonForNotification = "ReasonForNotification"
 
 
-class NotificationHandler: NSObject {
-    let  defaultCenter =  NSNotificationCenter.defaultCenter()
+public class NotificationHandler: NSObject {
+   public let  defaultCenter =  NSNotificationCenter.defaultCenter()
     
-    static let sharedInstance = NotificationHandler()
+    public static let sharedInstance = NotificationHandler()
     
     override init() {
         super.init()
@@ -24,7 +24,7 @@ class NotificationHandler: NSObject {
         
     }
     
-    func postNotification(notification: NSNotification) {
+    public func postNotification(notification: NSNotification) {
         print("MyNotification was handled")
         let notificationName = notification.userInfo![kReasonForNotification] as! String
         defaultCenter.postNotificationName(notificationName, object: nil, userInfo: notification.userInfo!)
